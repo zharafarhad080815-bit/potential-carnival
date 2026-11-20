@@ -1,0 +1,54 @@
+<!--You will build a Game Profile page using JavaScript. The page has a button — Show Profile — and a list of labelled rows. When you click the button, JavaScript fills in each row with your player name, game, score, whether you set a new record, your rank badge, a time-of-day greeting, a star trail, and two missing values that show null and undefined.-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>My Game Profile</title>
+    </head>
+    <body>
+        <h1>My Game Profile</h1>
+        <button onclick="showProfile()">Show Profile</button>
+        <ul id="profile-list">
+            <li id="player-name">Player Name: </li>
+            <li id="game">Game: </li>
+            <li id="score">Score: </li>
+            <li id="new-record">New Record: </li>
+            <li id="rank-badge">Rank Badge: </li>
+            <li id="greeting">Greeting: </li>
+            <li id="star-trail">Star Trail: </li>
+            <li id="missing-value-null">Missing Value (null): </li>
+            <li id="missing-value-undefined">Missing Value (undefined): </li>
+        </ul>
+
+        <script>
+            function showProfile() {
+                // Fill in the profile details
+                document.getElementById("player-name").textContent = "Player Name: John Doe";
+                document.getElementById("game").textContent = "Game: Space Invaders";
+                document.getElementById("score").textContent = "Score: 1500";
+                document.getElementById("new-record").textContent = "New Record: Yes";
+                document.getElementById("rank-badge").textContent = "Rank Badge: Gold";
+                
+                // Time-of-day greeting
+                const hours = new Date().getHours();
+                let greeting;
+                if (hours < 12) {
+                    greeting = "Good Morning!";
+                } else if (hours < 18) {
+                    greeting = "Good Afternoon!";
+                } else {
+                    greeting = "Good Evening!";
+                }
+                document.getElementById("greeting").textContent = "Greeting: " + greeting;
+
+                // Star trail
+                document.getElementById("star-trail").textContent = "Star Trail: ★★★★☆";
+
+                // Missing values
+                document.getElementById("missing-value-null").textContent = "Missing Value (null): " + null;
+                document.getElementById("missing-value-undefined").textContent = "Missing Value (undefined): " + undefined;
+            }
+        </script>
+    </body>
+</html>
